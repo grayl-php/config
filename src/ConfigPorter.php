@@ -77,4 +77,24 @@
          return $controller;
       }
 
+
+      /**
+       * Returns the included contents of a config file
+       *
+       * @param string $file The name of the file to load from the config directory
+       *
+       * @return object
+       * @throws \Exception
+       */
+      public function includeConfigFile ( string $file ): object
+      {
+
+         // Get a new FileController for this config file
+         $config_file = FilePorter::getInstance()
+                                  ->newFileController( $this->config_dir . $file );
+
+         // Return the included file
+         return $config_file->getIncludedFile();
+      }
+
    }
