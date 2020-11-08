@@ -97,4 +97,17 @@
          return $config_file->getIncludedFile();
       }
 
+
+      /**
+       * Returns the current path of the config directory
+       *
+       * @return string
+       */
+      public function getConfigFolderDir (): string
+      {
+
+         // Return the config directory path
+         return $this->config_dir;
+      }
+
    }
